@@ -63,7 +63,7 @@ body {
 
 /* KHI MỞ: Bạn có thể thay đổi translateX ở đây để canh trái/phải */
 .card.open {
-    transform: rotateY(-180deg) translateX(150px);
+    transform: rotateY(-180deg);
 }
 
 .card-front, .card-inside {
