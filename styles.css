@@ -146,6 +146,6 @@ body {
     /* CHÈN THÊM VÀO ĐÂY ĐỂ CANH TRÁI PHẢI KHI MỞ TRÊN ĐIỆN THOẠI */
     .card.open {
         /* Chỉnh con số 100px này: Tăng lên là sang PHẢI, giảm đi (hoặc dùng số âm) là sang TRÁI */
-        transform: rotateY(180deg) translateX(-175px) !important;
+        transform: rotateY(-180deg) translateX(-175px) !important;
     }
 }
