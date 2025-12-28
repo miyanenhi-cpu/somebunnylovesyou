@@ -131,7 +131,7 @@ body {
 * --- FIX CHO ĐIỆN THOẠI: ÉP THIỆP NHỎ LẠI VÀ NẰM NGANG --- */
 @media (max-width: 600px) {
     .card-container {
-        /* Chỉnh scale(0.4) giúp thiệp ngang hiện trọn vẹn trên màn hình dọc */
+        /* Chỉnh scale(0.025) giúp thiệp ngang hiện trọn vẹn trên màn hình dọc */
         transform: scale(0.025) !important; 
         transform-origin: center center;
     }
