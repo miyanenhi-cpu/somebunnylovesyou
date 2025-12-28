@@ -131,7 +131,7 @@ body {
 * --- FIX CHO ĐIỆN THOẠI: ÉP THIỆP NHỎ LẠI VÀ NẰM NGANG --- */
 @media (max-width: 600px) {
     .card-container {
-        /* Chỉnh scale(0.3) giúp thiệp ngang hiện trọn vẹn trên màn hình dọc */
+        /* Chỉnh scale(0.4) giúp thiệp ngang hiện trọn vẹn trên màn hình dọc */
         transform: scale(0.4) !important; 
         transform-origin: center center;
     }
@@ -140,7 +140,7 @@ body {
     .card-inside {
         display: flex !important;
         flex-direction: row !important;
-        width: 800px !important;
+        width: 600px !important;
     }
 
     /* CHÈN THÊM VÀO ĐÂY ĐỂ CANH TRÁI PHẢI KHI MỞ TRÊN ĐIỆN THOẠI */
