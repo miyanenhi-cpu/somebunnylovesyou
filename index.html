@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Somebunny Loves You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" id="loveCard">
+            <div class="card-front">
+                <img src="bunny.jpg" alt="Bunny" class="cover-img">
+                <div style="position: absolute; bottom: 25px; width: 100%; text-align: center; color: #ff758c; font-weight: 600;">
+                    Chạm để mở quà nha... ❤️
+                </div>
+            </div>
+
+            <div class="card-inside">
+                <div class="inside-left">
+                    <div class="polaroid">
+                        <img src="us.jpg" alt="Us">
+                    </div>
+                </div>
+                <div class="inside-right">
+                    <div class="letter-text">
+                        <p>Yêu dấu của em,</p>
+                        <p>"Mong anh chuyện dữ hóa lành, vạn dặm bình an, cơm ngon đợi cửa, em mong anh nhớ dù có khó khăn thì luôn có em bên cạnh anh..."</p>
+                        <p>Món quà nhỏ này dành riêng cho anh. Yêu anh thật nhiều!</p>
+                        <p class="signature">Yêu của anh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const card = document.getElementById('loveCard');
+        card.addEventListener('click', () => {
+            card.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

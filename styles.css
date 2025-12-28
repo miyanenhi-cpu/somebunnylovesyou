@@ -1,0 +1,141 @@
+/* NỀN VÀ CĂN CHỈNH TỔNG THỂ */
+body {
+    background: #fff5f7;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    perspective: 2000px;
+    overflow: hidden;
+}
+
+/* HIỆU ỨNG THIỆP RƠI */
+.card-container {
+    width: 400px;
+    height: 540px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* Animation rơi từ trên xuống */
+    animation: dropIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes dropIn {
+    0% { transform: translateY(-100vh) rotate(-5deg); opacity: 0; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+.card {
+    width: 400px;
+    height: 540px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    left: 50%;
+    margin-left: -200px; 
+}
+
+/* KHI MỞ: Xoay tại chỗ (Bạn có thể thêm translateX nếu muốn dịch trái/phải) */
+.card.open {
+    transform: rotateY(-180deg)
+}
+
+.card-front, .card-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
+}
+
+.card-front {
+    z-index: 2;
+    background: white;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MẶT TRONG - ÉP CHẾT LAYOUT NGANG */
+.card-inside {
+    transform: rotateY(180deg);
+    display: flex !important; /* Luôn giữ hàng ngang */
+    flex-direction: row !important;
+    width: 800px !important; /* 2 trang mỗi trang 400px */
+    left: 0;
+    background: white;
+}
+
+.inside-left, .inside-right {
+    width: 400px !important;
+    height: 540px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside-left { border-right: 1px dashed #ffd1dc; background: #fffcfd; }
+
+.polaroid {
+    background: white;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transform: rotate(-2deg);
+    border: 1px solid #f0f0f0;
+}
+
+.polaroid img { width: 260px; height: 330px; object-fit: cover; }
+
+.letter-text { 
+    line-height: 1.8; 
+    color: #444; 
+    text-align: left; 
+    font-size: 14px;
+    white-space: normal;
+}
+
+.signature { 
+    font-family: 'Dancing Script', cursive; 
+    font-size: 1.8rem; 
+    color: #d81b60; 
+    text-align: right; 
+    margin-top: 20px; 
+    width: 100%;
+}
+
+/* --- FIX CHO ĐIỆN THOẠI: ÉP THIỆP NHỎ LẠI VÀ NẰM NGANG --- */
+@media (max-width: 600px) {
+    .card-container {
+        /* Chỉnh scale(0.5) giúp thiệp ngang hiện trọn vẹn trên màn hình dọc */
+        transform: scale(0.5) !important; 
+        transform-origin: center center;
+    }
+
+    /* Đảm bảo mặt trong không bao giờ bị nhảy thành hàng dọc */
+    .card-inside {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 800px !important;
+    }
+
+    /* CHÈN THÊM VÀO ĐÂY ĐỂ CANH TRÁI PHẢI KHI MỞ TRÊN ĐIỆN THOẠI */
+    .card.open {
+        /* Chỉnh con số 100px này: Tăng lên là sang PHẢI, giảm đi (hoặc dùng số âm) là sang TRÁI */
+        transform: rotateY(180deg) translateX(-75px) !important;
+    }
+}
