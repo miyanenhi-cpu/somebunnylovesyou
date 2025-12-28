@@ -132,7 +132,7 @@ body {
 @media (max-width: 600px) {
     .card-container {
         /* Chỉnh scale(0.5) giúp thiệp ngang hiện trọn vẹn trên màn hình dọc */
-        transform: scale(0.5) !important; 
+        transform: scale(0.6) !important; 
         transform-origin: center center;
     }
 
